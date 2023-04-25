@@ -1,7 +1,7 @@
 const http = require('http');
 const server = http.createServer((req, res)=>{
 res.status = 200;
-res.setHeader('Content-Type', 'text/plai; charset=utf-8');
+res.setHeader('Content-Type', 'text/plain; charset=utf-8');
 res.end('¡Bienvenido/a!');
 });
 server.listen(80, () => {
