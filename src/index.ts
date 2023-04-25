@@ -29,7 +29,7 @@ router.get('/users', isAdmin, getAllUsers);
 router.get('/users/:id', isAdmin, getUserById);
 router.post('/users', isAdmin, createUser);
 router.put('/users/:id', isAdmin, updateUser);
-router.delete('/users/:id', isAdmin, deleteUserById);
+router.delete('/users', isAdmin, deleteUserById);
 
 // Supplier routes
 router.get('/suppliers', getAllSuppliers);

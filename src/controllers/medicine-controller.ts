@@ -39,9 +39,10 @@ export const getMedicineById = async (req: Request, res: Response): Promise<void
 
 export const updateMedicine = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { id } = req.params;
+        const { id } = req.query;
+        const medicineId = id === undefined || id === null ? 0 : id;
         const { name, description, price, cost } = req.body;
-        const medicine = await Medicine.findByPk(id);
+        const medicine = await Medicine.findByPk(parseInt(medicineId.toString()));
         if (medicine) {
             medicine.name = name;
             medicine.description = description;
@@ -59,8 +60,9 @@ export const updateMedicine = async (req: Request, res: Response): Promise<void>
 
 export const deleteMedicineById = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { id } = req.params;
-        const medicine = await Medicine.findByPk(id);
+        const { id } = req.query;
+        const medicineId = id === undefined || id === null ? 0 : id;
+        const medicine = await Medicine.findByPk(parseInt(medicineId.toString()));
         if (medicine) {
             await medicine.destroy();
             res.status(200).json({ msg: "Medicine deleted" });

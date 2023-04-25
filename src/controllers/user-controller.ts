@@ -41,9 +41,10 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
 
 export const updateUser = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { id } = req.params;
+        const { id } = req.query;
+        const userId = id === undefined || id === null ? 0 : id;
         const { name, email, password, role } = req.body;
-        const user = await User.findByPk(id);
+        const user = await User.findByPk(parseInt(userId.toString()));
         if (user) {
             user.name = name;
             user.email = email;
@@ -61,8 +62,9 @@ export const updateUser = async (req: Request, res: Response): Promise<void> => 
 
 export const deleteUserById = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { id } = req.params;
-        const user = await User.findByPk(id);
+        const { id } = req.query;
+        const userId = id === undefined || id === null ? 0 : id;
+        const user = await User.findByPk(parseInt(userId.toString()));
         if (user) {
             await user.destroy();
             res.status(200).json({ msg: "User deleted" });
