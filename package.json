@@ -1,19 +1,21 @@
 {
-  "name": "hensp-backend-test",
+  "name": "apirest_mysql",
   "version": "1.0.0",
-  "description": "Backend Test for HENSP",
+  "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/hensp/hensp-backend-test.git"
-  },
-  "author": "HENSP",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hensp/hensp-backend-test/issues"
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.4"
   },
-  "homepage": "https://github.com/hensp/hensp-backend-test#readme"
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
