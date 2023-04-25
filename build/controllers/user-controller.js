@@ -53,9 +53,10 @@ const getUserById = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
 exports.getUserById = getUserById;
 const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { id } = req.params;
+        const { id } = req.query;
+        const userId = id === undefined || id === null ? 0 : id;
         const { name, email, password, role } = req.body;
-        const user = yield user_1.default.findByPk(id);
+        const user = yield user_1.default.findByPk(parseInt(userId.toString()));
         if (user) {
             user.name = name;
             user.email = email;

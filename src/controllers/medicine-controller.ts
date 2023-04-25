@@ -2,13 +2,14 @@ import { Request, Response } from "express";
 import Medicine from "../models/medicine";
 export const createMedicine = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { name, description, price, cost } = req.body;
+        const { name, description, price, cost, supplier_id } = req.body;
         const newMedicine = await Medicine.create(
             {
                 name,
                 description,
                 price,
-                cost
+                cost,
+                supplier_id
             }
         );
         res.status(201).json(newMedicine);
@@ -39,10 +40,9 @@ export const getMedicineById = async (req: Request, res: Response): Promise<void
 
 export const updateMedicine = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { id } = req.query;
-        const medicineId = id === undefined || id === null ? 0 : id;
+        const { id } = req.params;
         const { name, description, price, cost } = req.body;
-        const medicine = await Medicine.findByPk(parseInt(medicineId.toString()));
+        const medicine = await Medicine.findByPk(id);
         if (medicine) {
             medicine.name = name;
             medicine.description = description;
@@ -60,9 +60,8 @@ export const updateMedicine = async (req: Request, res: Response): Promise<void>
 
 export const deleteMedicineById = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { id } = req.query;
-        const medicineId = id === undefined || id === null ? 0 : id;
-        const medicine = await Medicine.findByPk(parseInt(medicineId.toString()));
+        const { id } = req.params;
+        const medicine = await Medicine.findByPk(id);
         if (medicine) {
             await medicine.destroy();
             res.status(200).json({ msg: "Medicine deleted" });

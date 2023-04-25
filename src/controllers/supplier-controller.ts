@@ -40,10 +40,9 @@ export const getSupplierById = async (req: Request, res: Response): Promise<void
 
 export const updateSupplier = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { id } = req.query;
-        const userId = id === undefined || id === null ? 0 : id;
+        const { id } = req.params;
         const { name, address, phone, email } = req.body;
-        const supplier = await Supplier.findByPk(parseInt(userId.toString()));
+        const supplier = await Supplier.findByPk(id);
         if (supplier) {
             supplier.name = name;
             supplier.address = address;
@@ -61,9 +60,8 @@ export const updateSupplier = async (req: Request, res: Response): Promise<void>
 
 export const deleteSupplierById = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { id } = req.query;
-        const supplierId = id === undefined || id === null ? 0 : id;
-        const supplier = await Supplier.findByPk(parseInt(supplierId.toString()));
+        const { id } = req.params;
+        const supplier = await Supplier.findByPk(id);
         if (supplier) {
             await supplier.destroy();
             res.status(200).json({ msg: "Supplier deleted" });

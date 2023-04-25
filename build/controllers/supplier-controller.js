@@ -53,9 +53,10 @@ const getSupplierById = (req, res) => __awaiter(void 0, void 0, void 0, function
 exports.getSupplierById = getSupplierById;
 const updateSupplier = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { id } = req.params;
+        const { id } = req.query;
+        const userId = id === undefined || id === null ? 0 : id;
         const { name, address, phone, email } = req.body;
-        const supplier = yield supplier_1.default.findByPk(id);
+        const supplier = yield supplier_1.default.findByPk(parseInt(userId.toString()));
         if (supplier) {
             supplier.name = name;
             supplier.address = address;
@@ -75,8 +76,9 @@ const updateSupplier = (req, res) => __awaiter(void 0, void 0, void 0, function*
 exports.updateSupplier = updateSupplier;
 const deleteSupplierById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { id } = req.params;
-        const supplier = yield supplier_1.default.findByPk(id);
+        const { id } = req.query;
+        const supplierId = id === undefined || id === null ? 0 : id;
+        const supplier = yield supplier_1.default.findByPk(parseInt(supplierId.toString()));
         if (supplier) {
             yield supplier.destroy();
             res.status(200).json({ msg: "Supplier deleted" });

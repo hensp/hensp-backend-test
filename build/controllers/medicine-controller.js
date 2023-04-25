@@ -53,9 +53,10 @@ const getMedicineById = (req, res) => __awaiter(void 0, void 0, void 0, function
 exports.getMedicineById = getMedicineById;
 const updateMedicine = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { id } = req.params;
+        const { id } = req.query;
+        const medicineId = id === undefined || id === null ? 0 : id;
         const { name, description, price, cost } = req.body;
-        const medicine = yield medicine_1.default.findByPk(id);
+        const medicine = yield medicine_1.default.findByPk(parseInt(medicineId.toString()));
         if (medicine) {
             medicine.name = name;
             medicine.description = description;
