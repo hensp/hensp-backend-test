@@ -10,6 +10,7 @@ const database_1 = require("./database/database");
 const medicine_controller_1 = require("./controllers/medicine-controller");
 const admin_1 = require("./middlewares/admin");
 const user_controller_1 = require("./controllers/user-controller");
+const supplier_controller_1 = require("./controllers/supplier-controller");
 const app = (0, express_1.default)();
 const router = express_1.default.Router();
 app.use((0, cors_1.default)());
@@ -25,7 +26,13 @@ router.get('/users', admin_1.isAdmin, user_controller_1.getAllUsers);
 router.get('/users/:id', admin_1.isAdmin, user_controller_1.getUserById);
 router.post('/users', admin_1.isAdmin, user_controller_1.createUser);
 router.put('/users/:id', admin_1.isAdmin, user_controller_1.updateUser);
-router.delete('/users/:id', admin_1.isAdmin, user_controller_1.deleteUserById);
+router.delete('/users', admin_1.isAdmin, user_controller_1.deleteUserById);
+// Supplier routes
+router.get('/suppliers', supplier_controller_1.getAllSuppliers);
+router.get('/suppliers/:id', supplier_controller_1.getSupplierById);
+router.post('/suppliers', admin_1.isAdmin, supplier_controller_1.createSupplier);
+router.put('/suppliers/:id', admin_1.isAdmin, medicine_controller_1.updateMedicine);
+router.delete('/suppliers/:id', admin_1.isAdmin, medicine_controller_1.deleteMedicineById);
 app.listen(3000, () => {
     console.log('Server running on port 3000');
     database_1.sequelize.authenticate().then(() => {

@@ -75,8 +75,9 @@ const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.updateUser = updateUser;
 const deleteUserById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { id } = req.params;
-        const user = yield user_1.default.findByPk(id);
+        const { id } = req.query;
+        const userId = id === undefined || id === null ? 0 : id;
+        const user = yield user_1.default.findByPk(parseInt(userId.toString()));
         if (user) {
             yield user.destroy();
             res.status(200).json({ msg: "User deleted" });

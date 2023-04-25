@@ -75,8 +75,9 @@ const updateMedicine = (req, res) => __awaiter(void 0, void 0, void 0, function*
 exports.updateMedicine = updateMedicine;
 const deleteMedicineById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { id } = req.params;
-        const medicine = yield medicine_1.default.findByPk(id);
+        const { id } = req.query;
+        const medicineId = id === undefined || id === null ? 0 : id;
+        const medicine = yield medicine_1.default.findByPk(parseInt(medicineId.toString()));
         if (medicine) {
             yield medicine.destroy();
             res.status(200).json({ msg: "Medicine deleted" });
