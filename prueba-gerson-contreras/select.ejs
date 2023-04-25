@@ -1,0 +1,20 @@
+<table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Proveedor</th>
+        <th>Costo</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < results.length; i++) { %>
+        <tr>
+          <td><%= results[i].nombre_medicamento %></td>
+          <td><%= results[i].proveedor_medicamento %></td>
+          <td><%= results[i].costo_medicamento %></td>
+          <td><%= results[i].precio_medicamento %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
