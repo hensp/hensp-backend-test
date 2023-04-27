@@ -67,6 +67,7 @@ export const getMedicines = async (req, res) => {
             offset,
         });
 
+  
         if (!medicines.length) {
             return res.status(404).json({
                 msg: 'No se encontraron medicamentos',
@@ -143,3 +144,21 @@ export const deleteMedicine = async (req, res) => {
         })
     }
 }
+
+
+export const getMedicineProvider = async (req, res) => {
+    try {
+     const _id = req.params.id
+     const projects = await Task.findAll({ where: { projectId: _id }})
+     if(!projects){
+         return res.status(404).json({
+             msg: 'No se encontraron proyectos',
+         })
+     }
+    return res.status(200).send(projects)
+    } catch (error) {
+     return res.status(500).json({
+         msg: 'Error al obtener los proyectos',
+     })
+    }
+ }

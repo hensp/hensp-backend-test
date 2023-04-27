@@ -1,5 +1,5 @@
 import { Router } from "express"
-import {createMedicine, getMedicines,deleteMedicine,updateMedicine,searchMedicines} from "../controllers/medicines.controller.js"
+import {createMedicine, getMedicines,deleteMedicine,updateMedicine,searchMedicines,getMedicineProvider} from "../controllers/medicines.controller.js"
 import { check } from 'express-validator'
 import { validationFields } from '../middlewares/validate-fields.js'
 
@@ -23,6 +23,10 @@ router.put('/medications/:id', [
 ], validationFields,
 updateMedicine)
 
+router.get('/medications/:id/providers', [
+    check('id', 'No es un id valido').isInt(),
+], validationFields,
+getMedicineProvider)
 
 
 

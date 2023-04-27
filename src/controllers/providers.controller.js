@@ -1,4 +1,5 @@
 import { Provider } from "../models/Providers.js" // Importamos el modelo de 
+import { Medicine } from "../models/Medicines.js" // Importamos el modelo de la tabla medicines
 
 export const createProvider = async (req, res) => {
     try {
@@ -55,6 +56,9 @@ export const getProviders = async (req, res) => {
         const offset = (+page - 1) * limit; // Calcula el offset para la paginación
 
         const medicines = await Provider.findAll({
+            include: [
+                {model: Medicine, attributes: ['name', 'cost', 'price', 'quantity', 'description', 'expiration_date', 'category']},
+            ],
             limit,
             offset,
         });
