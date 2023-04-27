@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Backend Test for HENSP",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,20 @@
   "bugs": {
     "url": "https://github.com/hensp/hensp-backend-test/issues"
   },
-  "homepage": "https://github.com/hensp/hensp-backend-test#readme"
+  "homepage": "https://github.com/hensp/hensp-backend-test#readme",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-validator": "^6.15.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.31.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
