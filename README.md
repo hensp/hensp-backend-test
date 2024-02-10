@@ -12,11 +12,13 @@ Tienes un máximo de **5 horas** para la prueba, por si quieres refactorizar o h
 
 ### Información técnica
 
-El diseño de la base de datos está a tu criterio, siguiendo las prácticas que conoces, únicamente **sí es requisito utilizar una base de datos relacional**, te recomendamos: MySQL/MariaDB o en su defecto SQLite.
+El diseño de la base de datos está a tu criterio, siguiendo las prácticas que conoces, únicamente **sí es requisito utilizar una base de datos relacional**, te recomendamos: MySQL/MariaDB, PostgreSQL o en su defecto SQLite.
 
 Para la creación de la aplicación puedes utilizar el framework de Node.js que desees, te recomendamos: Express.js o Nest.js.
 
 ### Historias de Usuario (requerimientos)
+
+- Como usuario, quiero poder autenticar mi cuenta dentro del sistema. (Pro-tip: [JWT](https://keepcoding.io/blog/que-es-json-web-token/))
 
 - Como usuario del sistema, quiero obtener una lista de todos los medicamentos disponibles en el área de farmacia, para poder consultar el nombre, proveedor, costo y precio de venta de cada uno de ellos.
 
