@@ -6,9 +6,9 @@ En esta prueba deberás realizar una REST API para un CRUD básico de medicament
 
 ### Alcance
 
-Se espera que te tomes aproximadamente 1 hora en realizar los requerimientos.
+Se espera que te tomes aproximadamente 3 horas en realizar los requerimientos.
 
-Tienes un máximo de **2 horas** para la prueba, por si quieres refactorizar o hacer los puntos extras.
+Tienes un máximo de **5 horas** para la prueba, por si quieres refactorizar o hacer los puntos extras.
 
 ### Información técnica
 
