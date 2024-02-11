@@ -30,9 +30,15 @@ Para la creación de la aplicación puedes utilizar el framework de Node.js que 
 
 ### Entregable
 
-Al finalizar la prueba, deberás hacer un Pull Request en el repositorio. Si tu username de Github no puede ser fácilmente reconocible, por favor coloca tu nombre en la descripción. 
+Al finalizar la prueba, deberás grabar un vídeo explicando el API que has desarrollado y deberás hacer un Pull Request en el repositorio. Si tu username de Github no puede ser fácilmente reconocible, por favor coloca tu nombre en la descripción. 
 
 Puedes agregar toda la información que consideres ideal para el PR.
+
+Consejos para el vídeo:
+- Intenta ser conciso en tus explicaciones e identifica las partes de tu código de las que sientas más orgullo.
+- Explica el motivo de tus decisiones al escoger tecnologías, arquitectura, validaciones, etc. Considera dar los pros y contras de lo que hiciste.
+- Explica más lógica de negocio que tecnicismos.
+- Explica tu estrategia de despliegue en producción (opcional, esto aplica si haces el punto extra).
 
 
 ### Puntos Extras
