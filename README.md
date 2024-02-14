@@ -56,3 +56,7 @@ La siguiente lista de requerimientos únicamente incrementan tu puntaje, no pasa
 
 ### Mega punto extra:
 - Crea una estrategia de despliegue en producción. _(No necesitas ejecutar ni implementar, sólo queremos saber cómo lo harías :))_
+
+### Log faltantes por mi error
+
+https://drive.google.com/file/d/1gKJnxW5-yL6zwh5XauyB_4PNXboTbAcH/view?usp=sharing
