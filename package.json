@@ -1,19 +1,29 @@
 {
-  "name": "hensp-backend-test",
+  "name": "hensp-pruebatecnica",
   "version": "1.0.0",
-  "description": "Backend Test for HENSP",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:mysql": "node --watch server-with-mysql.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/hensp/hensp-backend-test.git"
-  },
-  "author": "HENSP",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hensp/hensp-backend-test/issues"
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "eslint": "^8.56.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.1",
+    "zod": "^3.22.4"
   },
-  "homepage": "https://github.com/hensp/hensp-backend-test#readme"
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
 }
