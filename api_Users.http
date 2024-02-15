@@ -1,0 +1,26 @@
+GET http://localhost:1234/users
+
+### send token
+Get http://localhost:1234/users/sendToken
+
+### create a new user
+POST http://localhost:1234/users
+Content-Type: application/json
+
+{
+  "username": "AliceMarin",
+  "password": "13489",
+  "nombre": "Marina",
+  "apellido": "Benavides",
+  "correo": "alicia@gmail.com"
+}
+### update user
+PATCH http://localhost:1234/users/41b584f8-ca06-11ee-a622-0242ac11028f
+Content-Type: application/json
+
+{
+  "username": "adminhenspPP"
+}
+
+### delete user
+DELETE http://localhost:1234/users/91af628b-ca06-11ee-a622-0242ac11028f

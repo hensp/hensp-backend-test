@@ -1,0 +1,27 @@
+GET http://localhost:1234/medicamento
+
+### send token
+Get http://localhost:1234/medicamento/sendToken
+
+
+###Create a new user
+POST http://localhost:1234/medicamento
+Content-Type: application/json
+
+{
+    "nombre": "Tetraciclina",
+    "proveedor": "Farmacia ABC",
+    "costo": 2.50,
+    "precioVenta":4.00
+}
+
+###update medicamento
+PATCH http://localhost:1234/medicamento/7
+Content-Type: application/json
+
+{
+  "proveedor": "Farmacia ABC"
+}
+
+###Delete a medicamento
+DELETE http://localhost:1234/medicamento/9
