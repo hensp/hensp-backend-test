@@ -1,58 +1,73 @@
-# HENSP Backend Test
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-### Resumen
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-En esta prueba deberás realizar una REST API para un CRUD básico de medicamentos utilizando Node.js.
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-### Alcance
+## Description
 
-Se espera que te tomes aproximadamente 3 horas en realizar los requerimientos.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-Tienes un máximo de **5 horas** para la prueba, por si quieres refactorizar o hacer los puntos extras.
+## Installation
 
-### Información técnica
+```bash
+$ yarn install
+```
 
-El diseño de la base de datos está a tu criterio, siguiendo las prácticas que conoces, únicamente **sí es requisito utilizar una base de datos relacional**, te recomendamos: MySQL/MariaDB, PostgreSQL o en su defecto SQLite.
+## Running the app
 
-Para la creación de la aplicación puedes utilizar el framework de Node.js que desees, te recomendamos: Express.js o Nest.js.
+```bash
+# development
+$ yarn run start
 
-### Historias de Usuario (requerimientos)
+# watch mode
+$ yarn run start:dev
 
-- Como usuario, quiero poder autenticar mi cuenta dentro del sistema. (Pro-tip: [JWT](https://keepcoding.io/blog/que-es-json-web-token/))
+# production mode
+$ yarn run start:prod
+```
 
-- Como usuario del sistema, quiero obtener una lista de todos los medicamentos disponibles en el área de farmacia, para poder consultar el nombre, proveedor, costo y precio de venta de cada uno de ellos.
+## Test
 
-- Como usuario administrador del sistema, quiero agregar nuevos medicamentos al área de farmacia.
+```bash
+# unit tests
+$ yarn run test
 
-- Como usuario administrador del sistema, quiero editar la información de un medicamento del área de farmacia.
+# e2e tests
+$ yarn run test:e2e
 
-- Como usuario administrador del sistema, quiero eliminar un medicamento del área de farmacia.
+# test coverage
+$ yarn run test:cov
+```
 
-### Entregable
+## Support
 
-Al finalizar la prueba, deberás grabar un vídeo explicando el API que has desarrollado y deberás hacer un Pull Request en el repositorio. Si tu username de Github no puede ser fácilmente reconocible, por favor coloca tu nombre en la descripción. 
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-Puedes agregar toda la información que consideres ideal para el PR.
+## Stay in touch
 
-Consejos para el vídeo:
-- Intenta ser conciso en tus explicaciones e identifica las partes de tu código de las que sientas más orgullo.
-- Explica el motivo de tus decisiones al escoger tecnologías, arquitectura, validaciones, etc. Considera dar los pros y contras de lo que hiciste.
-- Explica más lógica de negocio que tecnicismos.
-- Explica tu estrategia de despliegue en producción (opcional, esto aplica si haces el punto extra).
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
+## License
 
-### Puntos Extras
-
-La siguiente lista de requerimientos únicamente incrementan tu puntaje, no pasa nada si no los haces.
-
-- Utiliza _conventional commits_ para escribir tus mensajes en git.
-- Crea un docker-compose para tu proyecto.
-- Utiliza Typescript _(aplica si usas Express.js)_.
-- Utiliza un ORM (Prisma, Knex o Sequelize) _(aplica si usas Express.js)_.
-- Paginación de resultados en la lista de medicamentos.
-- Filtro de búsqueda por nombre en lista de medicamentos _(doble punto si funciona con keywords)_.
-- Documentación en Swagger.
-- Validación de payloads en peticiones.
-
-### Mega punto extra:
-- Crea una estrategia de despliegue en producción. _(No necesitas ejecutar ni implementar, sólo queremos saber cómo lo harías :))_
+Nest is [MIT licensed](LICENSE).
